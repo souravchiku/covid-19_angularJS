@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/Style.css">
+    <script src="./Script/angular.min.js"></script>
+    <title>Covid-19</title>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="display-2 text-black-50 text-center text-uppercase">Covid-19 Dashboard</div>
+        </div>
+    </div>
+
+    <div class="container" ng-controller="myController">
+        <h3 id="glb" class="text-uppercase text-center">global Cases</h3>
+        <div class="row text-center">
+
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <div class="card-body bg-warning text-white">
+                        Confirmed Cases<br>
+                        {{all_data.confirmed.value}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt-3">
+                <div class="card">
+                    <div class="card-body bg-success text-white">
+                        Recovered Cases <br>
+                        {{all_data.recovered.value}}
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt-3">
+
+                <div class="card">
+                    <div class="card-body bg-danger text-white">
+                        Deaths <br>
+                        {{all_data.deaths.value}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- input -->
+        <h2 id="sear" class="my-4 py-2  text-uppercase">Search Your Country Cases</h2>
+        <!-- <input type="text" value="" class="form-control my-3"  placeholder="Enter Your Country Name" ng-model="c_case">
+         -->
+        
+            <input ng-change="fun2()" ng-model="c" type="text" class="form-control"
+                placeholder="Enter Your Country Name" aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+        
+
+
+
+        <div class="container-fluid" ng-if="c">
+            <hr>
+            <h2 id="status" class="my-4  text-uppercase">{{c}} status</h2>
+
+            <div class="row text-center" >
+
+                <div class="col-md-4 mt-3">
+                    <div class="card">
+                        <div class="card-body bg-warning text-white">
+                            Confirmed Cases<br>
+                            {{c_data.confirmed.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card">
+                        <div class="card-body bg-success text-white">
+                            Recovered Cases <br>
+                            {{c_data.recovered.value}}
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+
+                    <div class="card">
+                        <div class="card-body bg-danger text-white">
+                            Deaths <br>
+                            {{c_data.deaths.value}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+<script src="./Script/Script.js"></script>
+
+</html>
